@@ -1,8 +1,11 @@
-# FlutterAppMarket
-flutter实现的轻量级的应用下载市场ui展示
 
-A new Flutter application.
-
+A new Flutter application.<br>
+<img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot01.jpg" width="280" height="450" />
+<img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot02.jpg" width="280" height="450" />
+<img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot03.jpg" width="280" height="450" /><br>
+<img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot04.jpg" width="280" height="450" />
+<img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot05.jpg" width="280" height="450" />
+<img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot06.jpg" width="280" height="450" />
 ## Getting Started
 
 This project is a starting point for a Flutter application.
