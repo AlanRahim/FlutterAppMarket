@@ -134,4 +134,42 @@ class Utils {
         RegExp("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*\$");
     return exp.hasMatch(email);
   }
+
+  static String getImgPath(String name, {String format: 'png'}) {
+    return 'images/$name.$format';
+  }
+
+  ///通用appbar title
+  static Widget loadAppBar(String title, BuildContext context) {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      backgroundColor: Color(0xFF0B1D44),
+      title: Row(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+        GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Image.asset(
+            Utils.getImgPath("nav_icon_back"),
+            height: 23,
+            width: 45,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Padding(
+            padding: const EdgeInsets.only(left: 70.0),
+            child: Text(
+              title,
+              style: new TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.w100,
+                // 字体粗细程度
+                fontStyle: FontStyle.normal,
+                color: Color(0xFF00d0ff),
+              ),
+            )),
+      ]),
+      centerTitle: true,
+    );
+  }
 }

@@ -20,6 +20,26 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/jcenter' }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
     }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'androidx.core') {
+                details.useVersion "1.0.1"
+            }
+            if (details.requested.group == 'androidx.lifecycle') {
+                details.useVersion "2.0.0"
+            }
+            if (details.requested.group == 'androidx.versionedparcelable') {
+                details.useVersion "1.0.0"
+            }
+        }
+    }
 }
 
 rootProject.buildDir = '../build'

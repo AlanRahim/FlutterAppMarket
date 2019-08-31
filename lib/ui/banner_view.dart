@@ -44,24 +44,6 @@ class _BannerViewState extends State<BannerView> {
                         BorderRadius.all(Radius.circular(radius))),
                   ),
                 ),
-//                Padding(
-//                  padding: const EdgeInsets.all(10.0),
-//                  child: Column(
-//                    mainAxisAlignment: MainAxisAlignment.end,
-//                    crossAxisAlignment: CrossAxisAlignment.end,
-//                    children: <Widget>[
-//                      Text(
-//                        "title",
-//                        style: TextStyle(color: Colors.white, fontSize: 20.0),
-//                      ),
-//                      Text(
-//                        "title1",
-//                        maxLines: 2,
-//                        style: TextStyle(color: Colors.white),
-//                      ),
-//                    ],
-//                  ),
-//                ),
               ],
             ),
           );

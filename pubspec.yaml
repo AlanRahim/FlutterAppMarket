@@ -33,7 +33,7 @@ dependencies: # 应用或包依赖的其它包或插件
   flutter_staggered_grid_view: ^0.2.7
   # banner
   flutter_swiper: ^1.1.6
-  flutter_webview_plugin: ^0.3.5
+  webview_flutter: ^0.3.11+2
   # 图标库中文地址：http://www.fontawesome.com.cn/
   font_awesome_flutter: ^8.4.0
   # 解析html
@@ -53,12 +53,26 @@ dependencies: # 应用或包依赖的其它包或插件
   flutter_spinkit: ^2.1.0
   flutter_gallery_assets: 0.1.9+2
   common_utils: ^1.1.1
-
+  # Flutter 全局屏幕适配。https://github.com/flutterchina/auto_size
+  # 如果有问题请尝试修改如下链接
+  # url: https://github.com/flutterchina/auto_size.git
+  auto_size:
+    git:
+      url: https://github.com/flutterchina/auto_size.git
+  fluintl: ^0.1.3
+  shared_preferences: ^0.5.3+2
+  synchronized: '>=1.5.1 <3.0.0'
+  flutter_downloader: ^1.1.7
+  permission_handler: ^3.1.0
+  path_provider: ^0.5.0
+  cached_network_image: ^1.1.0
+#  flustars: ^0.2.5+1
 dev_dependencies: # 开发环境依赖的工具包（而不是flutter应用本身依赖的包）
   flutter_test:
     sdk: flutter
-
-
+  #####本地库
+  install_apk_plugin:
+    path: ./flutter_common_lib/install_apk_plugin
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 

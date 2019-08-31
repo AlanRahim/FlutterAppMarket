@@ -63,11 +63,11 @@ class SelectGames extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  height: 100,
+                  height: 110,
                   child: ListView(
                     padding:
                         EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
-                    itemExtent: 100,
+                    itemExtent: 110,
                     scrollDirection: Axis.horizontal,
                     children: cardUnit.items
                         .map<Widget>((item) => _SelectGame(

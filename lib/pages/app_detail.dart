@@ -11,11 +11,12 @@ import 'package:flutter_mmnes/ui/expandable_text.dart';
 import 'package:flutter_mmnes/ui/home_section_view.dart';
 import 'package:flutter_mmnes/ui/image_load_view.dart';
 import 'package:flutter_mmnes/ui/item_list.dart';
+import 'package:flutter_mmnes/utils/download_utils.dart';
 import 'package:flutter_mmnes/utils/loading_util.dart';
 import 'package:flutter_mmnes/utils/route_util.dart';
 import 'package:flutter_mmnes/utils/toast.dart';
 import 'package:flutter_mmnes/utils/utils.dart';
-import 'package:flutter_mmnes/ui/bottom_drag_view.dart';
+import 'package:flutter_mmnes/widget/download_progress_dialog.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:intl/intl.dart';
 
@@ -38,12 +39,13 @@ class AppDetailState extends State<AppDetail> {
 
   double width = (Utils.width - 10 * 3) / 3;
   double height;
+  DownloadProgressDialog mProgressDialog;
 
   @override
   void initState() {
     super.initState();
     height = width * 405 / 720 + 10;
-
+    mProgressDialog = new DownloadProgressDialog(context, ProgressDialogType.Download);
     getMovieDetail(widget.id);
   }
 
@@ -183,12 +185,12 @@ class AppDetailState extends State<AppDetail> {
         const Padding(padding: EdgeInsets.all(12.0)),
         Container(
             child: CupertinoButton(
-                child: const Text('下载'),
-                color: CupertinoColors.activeBlue,
+                child: mProgressDialog.getDialog(),
+                color: Colors.transparent,
                 padding: const EdgeInsets.symmetric(
                     vertical: 12.0, horizontal: 72.0),
-                onPressed: () => Toast.show('点击下载', context)),
-            margin: EdgeInsets.only(left: 60, right: 60)),
+                onPressed: () => downloadAction()),
+        ),
         const Padding(padding: EdgeInsets.all(18.0)),
       ]),
     );
@@ -249,5 +251,13 @@ class AppDetailState extends State<AppDetail> {
                 ])),
           ])),
     );
+  }
+
+  downloadAction() async{
+    ///测试数据,部分下载链接不可用
+    detailData.orderUrl = "http://apk.fr18.mmarket.com/cdn/rs/publish10/prepublish2/21/2019/08/26/a851/460/52460851/huoshanliteban_beijingyiying.apk?cid=300011883090&gid=000x11980390106100011560534300011883090&MD5=ae6039baf6c6e179f2723bc056964f70&ts=201908311836&tk=16B1&v=1";
+    debugPrint("downloadAction detailData.orderUrl:"  + detailData.orderUrl);
+//    String realUrl = await ApiService.getRealDownloadUrl(detailData.orderUrl);
+    doDownloadOperation(context, detailData.orderUrl, mProgressDialog);
   }
 }

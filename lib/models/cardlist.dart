@@ -249,6 +249,7 @@ class CardUnit {
       this.items = items;
     }
   }
+
 }
 
 class CardNes {
