@@ -1,5 +1,5 @@
 
-A new Flutter application.<br>
+flutter实现的轻量级的应用下载市场ui展示，实现常见的广告banner，文件下载进度展示，下载完成安装。.<br>
 <img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot07.jpg" width="280" height="450" />
 <img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot01.jpg" width="280" height="450" />
 <img src="https://github.com/lanhuzi9999/FlutterAppMarket/blob/master/images/Screenshot02.jpg" width="280" height="450" /><br>
